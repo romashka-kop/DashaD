@@ -23,8 +23,6 @@ namespace DashaD
     /// </summary>
     public partial class AddPatentWindow : Window
     {
-        private Expander _lastExpanded;
-
         public AddPatentWindow()
         {
             InitializeComponent();

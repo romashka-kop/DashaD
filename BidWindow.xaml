@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DashaD"
         mc:Ignorable="d"
-        Title="BidWindow" Height="500" Width="850">
+        Title="Заявка" Height="500" Width="850">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
