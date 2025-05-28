@@ -1,0 +1,130 @@
+﻿<Window x:Class="DashaD.PatentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DashaD"
+        mc:Ignorable="d"
+        Title="PatentWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Padding="10" TextWrapping="Wrap" Text="Патент" FontSize="28" FontWeight="Bold" VerticalAlignment="Top"/>
+        <ScrollViewer Grid.Row="1" Grid.ColumnSpan="4">
+            <StackPanel>
+                <TreeViewItem x:Name="Patent" Header="Патент" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <TextBlock Text="Название" FontSize="15"/>
+                    <TextBlock x:Name="PatentNameX" Width="190" FontSize="15"/>
+                    <TextBlock Text="Номер" FontSize="15"/>
+                    <TextBlock x:Name="PatentNumberX" Width="190" FontSize="15"/>
+                    <TextBlock Text="Приоритет изобретения" FontSize="15"/>
+                    <TextBlock x:Name="DatePriorityX" Width="190" FontSize="15"/>
+                    <TextBlock FontSize="15">
+                Зарегистрировано в Государственном
+                <LineBreak/>
+                реестре изобретений РФ
+                    </TextBlock>
+                    <TextBlock x:Name="DateRegistrationX" Width="190" FontSize="15"/>
+                    <TextBlock Text="Срок действия патента истекает" FontSize="15"/>
+                    <TextBlock x:Name="DateFinalX" Width="190" FontSize="15"/>
+                </TreeViewItem>
+                <TreeViewItem x:Name="Author" Header="Авторы" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <ListBox ScrollViewer.HorizontalScrollBarVisibility="Auto" Width="200" Height="100" ScrollViewer.VerticalScrollBarVisibility="Auto" x:Name="AddedAuthorsList" DisplayMemberPath="FullName"/>
+                </TreeViewItem>
+                <TreeViewItem x:Name="Bid" Header="Заявка" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <TextBlock Text="Номер" FontSize="15"/>
+                    <TextBlock x:Name="AddBidNumber" Width="190" FontSize="15"/>
+                </TreeViewItem>
+                <TreeViewItem x:Name="Agreement" Header="Договора" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <ListBox ScrollViewer.HorizontalScrollBarVisibility="Auto" Width="Auto" Height="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" x:Name="ListAgreements" DisplayMemberPath="AgreementName"/>
+                    <Button x:Name="AddAgreements" Content="+" Width="25" Height="25" Click="AddAgreements_Click"/>
+                    <TextBlock x:Name="TextType" Visibility="Collapsed" Text="Тип" FontSize="15"/>
+                    <ComboBox Visibility="Collapsed" x:Name="AgreementType" Width="190" FontSize="15" SelectionChanged="AgreementType_SelectionChanged">
+                        <ComboBoxItem Content="Акт"/>
+                    </ComboBox>
+                    <TextBlock x:Name="TextName" Visibility="Collapsed" Text="Название" FontSize="15"/>
+                    <TextBox Visibility="Collapsed" x:Name="AgreementName" Width="190" FontSize="15"/>
+                    <TextBlock x:Name="TextPeriod" Visibility="Collapsed" Text="Период" FontSize="15"/>
+                    <TextBox Visibility="Collapsed" x:Name="AgreementPeriod" Width="150" FontSize="15"/>
+                    <TextBox Visibility="Collapsed" x:Name="AgreementPeriod1" Width="150" FontSize="15"/>
+                    <TextBlock x:Name="TextNumber" Visibility="Collapsed" Text="Номер" FontSize="15"/>
+                    <TextBox Visibility="Collapsed" x:Name="AgreementNumber" Width="190" FontSize="15"/>
+                    <TextBlock x:Name="TextData" Visibility="Collapsed" Text="Дата" FontSize="15"/>
+                    <TextBox Visibility="Collapsed" x:Name="AgreementDate" Width="190" FontSize="15"/>
+                    <TreeViewItem x:Name="ActUse" Visibility="Collapsed" Header="Акт об использовании" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <TextBlock x:Name="UseNumber" Text="Номер" FontSize="15"/>
+                        <TextBox x:Name="ActUseNumber" Width="190" FontSize="15"/>
+                        <TextBlock x:Name="UseDate" Text="Дата" FontSize="15"/>
+                        <TextBox x:Name="ActUseDate" Width="190" FontSize="15"/>
+                        <TextBlock x:Name="UsePeriod" Text="Период" FontSize="15"/>
+                        <TextBox x:Name="ActUsePeriod" Width="190" FontSize="15"/>
+                        <TextBox x:Name="ActUsePeriod1" Width="190" FontSize="15"/>
+                        <TextBlock x:Name="UseFile" Text="Акт" FontSize="15"/>
+                        <TextBox x:Name="ActUseFile" ScrollViewer.VerticalScrollBarVisibility="Auto" Height="275" TextWrapping="Wrap" Width="525" FontSize="15"/>
+                    </TreeViewItem>
+                    <Button x:Name="AddAgreement" Visibility="Collapsed" Content="Добавить" Click="AddAgreement_Click"/>
+                    <Button x:Name="CloseAgreements" Visibility="Collapsed" Content="Закрыть" Click="CloseAgreements_Click"/>
+                </TreeViewItem>
+                <TreeViewItem x:Name="ActComparingAnalysis" Header="Акт о сопоставлении анализа" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <TextBlock Text="Период" FontSize="15"/>
+                    <TextBlock x:Name="ComparingAnalysisPeriodAct" Width="150" FontSize="15"/>
+                    <TextBlock x:Name="ComparingAnalysisPeriodAct1" Width="150" FontSize="15"/>
+                    <TextBlock Text="Номер" FontSize="15"/>
+                    <TextBlock x:Name="ComparingAnalysisActNumber" Width="190" FontSize="15"/>
+                    <TextBlock Text="Дата" FontSize="15"/>
+                    <TextBlock x:Name="ComparingAnalysisDateAct" Width="190" FontSize="15"/>
+                </TreeViewItem>
+                <TreeViewItem x:Name="ActImplementation" Header="Акт внедрения" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <TextBlock Text="Номер" FontSize="15"/>
+                    <TextBlock x:Name="ActImplementationNumber" Width="190" FontSize="15"/>
+                    <TextBlock Text="Дата" FontSize="15"/>
+                    <TextBlock x:Name="ActImplementationDate" Width="190" FontSize="15"/>
+                </TreeViewItem>
+                <TreeViewItem x:Name="PaymentDuties" Header="Платежки за пошлины" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <TextBlock Text="Период" FontSize="15"/>
+                    <TextBox x:Name="PaymentsDutiesPeriod" Width="150" FontSize="15"/>
+                    <TextBox x:Name="PaymentsDutiesPeriod1" Width="150" FontSize="15"/>
+                    <ListBox ScrollViewer.HorizontalScrollBarVisibility="Auto" Width="Auto" Height="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" x:Name="PaymentsDutiesList"/>
+                    <Button x:Name="AddPayment" Content="+" Width="25" Height="25" Click="AddPayment_Click"/>
+                    <TextBlock Visibility="Collapsed" x:Name="TextDatePayment" Text="Дата" FontSize="15"/>
+                    <TextBox Visibility="Collapsed" x:Name="PaymentsDutiesDate" Width="190" FontSize="15"/>
+                    <Button x:Name="AddPayments" Visibility="Collapsed" Content="Добавить" Click="AddPayments_Click"/>
+                    <Button x:Name="ClosePayment" Visibility="Collapsed" Content="Закрыть" Click="ClosePayment_Click"/>
+                </TreeViewItem>
+                <TreeViewItem x:Name="LetterAuthor" Header="Письма с авторами" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <TextBlock Text="Период" FontSize="15"/>
+                    <TextBox x:Name="LetterAuthorPeriod" Width="190" FontSize="15"/>
+                    <TextBox x:Name="LetterAuthorPeriod1" Width="190" FontSize="15"/>
+                    <TextBlock Text="Письма" FontSize="15"/>
+                    <ListBox ScrollViewer.HorizontalScrollBarVisibility="Auto" Width="Auto" Height="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" x:Name="LettersAuthorsList" DisplayMemberPath="LetterNumber"/>
+                    <Button x:Name="AddLettersAuthors" Content="+" Width="25" Height="25" Click="AddLettersAuthors_Click"/>
+                    <TextBlock x:Name="LetterDate" Text="Дата" FontSize="15" Visibility="Collapsed"/>
+                    <TextBox x:Name="LetterAuthorDate" Width="190" FontSize="15" Visibility="Collapsed"/>
+                    <TextBlock x:Name="LetterNumber" Text="Номер" FontSize="15" Visibility="Collapsed"/>
+                    <TextBox x:Name="LetterAuthorNumber" Width="190" FontSize="15" Visibility="Collapsed"/>
+                    <TextBlock x:Name="FileLetter" Text="Письмо" FontSize="15" Visibility="Collapsed"/>
+                    <TextBox x:Name="FileLetterAuthor" Visibility="Collapsed" ScrollViewer.VerticalScrollBarVisibility="Auto" Height="275" TextWrapping="Wrap" Width="525" FontSize="15"/>
+                    <Button x:Name="AddLetterAuthors" Visibility="Collapsed" Content="Добавить" Click="AddLetterAuthors_Click"/>
+                    <Button x:Name="CloseLetterAuthors" Visibility="Collapsed" Content="Закрыть" Click="CloseLetterAuthors_Click"/>
+                </TreeViewItem>
+            </StackPanel>
+        </ScrollViewer>
+        <Menu Height="35" Width="50" Grid.Column="3" HorizontalAlignment="Right" Margin="10">
+            <MenuItem Header="'''" FontSize="35" FontWeight="Black" Click="MenuItem_Click">
+                <MenuItem Header="Создать документ" FontSize="18" Click="MenuItem_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <Button Grid.Column="3" Grid.Row="2" x:Name="UpdatePatent" Content="Обновить" FontWeight="Bold" FontSize="16" Height="35" Width="180" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Margin="10" Click="ChangePatent_Click"/>
+
+    </Grid>
+</Window>

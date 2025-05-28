@@ -1,0 +1,151 @@
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\DashaD.exe
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\DashaD.deps.json
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\DashaD.runtimeconfig.json
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\DashaD.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\DashaD.pdb
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\Azure.Core.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\Azure.Identity.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.EntityFrameworkCore.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.Extensions.Logging.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.Identity.Client.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.SqlServer.Server.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\System.ClientModel.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\System.Formats.Asn1.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\System.Memory.Data.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\System.Runtime.Caching.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\System.Text.Json.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\bin\Debug\net9.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\obj\Debug\net9.0-windows\DashaD.csproj.AssemblyReference.cache
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\obj\Debug\net9.0-windows\MainWindow.g.cs
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\obj\Debug\net9.0-windows\App.g.cs
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\obj\Debug\net9.0-windows\DashaD_MarkupCompile.cache
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\obj\Debug\net9.0-windows\DashaD_MarkupCompile.lref
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\obj\Debug\net9.0-windows\MainWindow.baml
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\obj\Debug\net9.0-windows\DashaD.g.resources
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\obj\Debug\net9.0-windows\DashaD.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\obj\Debug\net9.0-windows\DashaD.AssemblyInfoInputs.cache
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\obj\Debug\net9.0-windows\DashaD.AssemblyInfo.cs
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\obj\Debug\net9.0-windows\DashaD.csproj.CoreCompileInputs.cache
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\obj\Debug\net9.0-windows\DashaD.csproj.Up2Date
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\obj\Debug\net9.0-windows\DashaD.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\obj\Debug\net9.0-windows\refint\DashaD.dll
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\obj\Debug\net9.0-windows\DashaD.pdb
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\obj\Debug\net9.0-windows\DashaD.genruntimeconfig.cache
+C:\Users\roman\Desktop\Даша\DashaD\DashaD\obj\Debug\net9.0-windows\ref\DashaD.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\DashaD.exe
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\DashaD.deps.json
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\DashaD.runtimeconfig.json
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\DashaD.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\DashaD.pdb
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\Azure.Core.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\Azure.Identity.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\BCrypt.Net-Next.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.EntityFrameworkCore.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.Extensions.Logging.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.Identity.Client.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\Microsoft.SqlServer.Server.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\System.ClientModel.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\System.Formats.Asn1.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\System.Memory.Data.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\System.Runtime.Caching.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\System.Text.Json.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\DashaD.csproj.AssemblyReference.cache
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\AddAuthorWindow.g.cs
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\AddBidWindow.g.cs
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\AddPatentWindow.g.cs
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\AuthorsPage.g.cs
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\AuthorWindow.g.cs
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\BidPage.g.cs
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\BidWindow.g.cs
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\InputPage.g.cs
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\MainWindow.g.cs
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\PatentsPage.g.cs
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\PatentWindow.g.cs
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\RegistrationPage.g.cs
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\App.g.cs
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\DashaD_MarkupCompile.cache
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\DashaD_MarkupCompile.lref
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\AddAuthorWindow.baml
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\AddBidWindow.baml
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\AddPatentWindow.baml
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\AuthorsPage.baml
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\AuthorWindow.baml
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\BidPage.baml
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\BidWindow.baml
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\InputPage.baml
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\MainWindow.baml
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\PatentsPage.baml
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\PatentWindow.baml
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\RegistrationPage.baml
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\DashaD.g.resources
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\DashaD.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\DashaD.AssemblyInfoInputs.cache
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\DashaD.AssemblyInfo.cs
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\DashaD.csproj.CoreCompileInputs.cache
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\DashaD.csproj.Up2Date
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\DashaD.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\refint\DashaD.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\DashaD.pdb
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\DashaD.genruntimeconfig.cache
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\ref\DashaD.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\AdminCodeWindow.baml
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\AdminCodeWindow.g.cs
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\DashaD.dll.config
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\Interop.Microsoft.Office.Interop.Word.dll
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Debug\net9.0-windows\DashaD.csproj.ResolveComReference.cache
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Debug\net9.0-windows\Document\bid.docx

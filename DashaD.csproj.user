@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_LastSelectedProfileId>C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="AddAuthorWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AddBidWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AddPatentWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AdminCodeWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\AuthorsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AuthorWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\BidPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="BidWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\InputPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\PatentsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PatentWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\RegistrationPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="AddAuthorWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AddBidWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AddPatentWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AdminCodeWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\AuthorsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AuthorWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\BidPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="BidWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\InputPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\PatentsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PatentWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\RegistrationPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>
