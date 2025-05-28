@@ -40,7 +40,57 @@ namespace DashaD
         {
             using ApplicationContext context = new();
             Patents patent = context.Patent.First(p => p.IdPatent == _idPatent);
+
+            var authorsForPatent = context.PatentAuthors
+                .Where(pa => pa.IdPatent == _idPatent)
+                .Join(
+                context.Author,
+                pa => pa.IdAuthor,
+                a => a.IdAuthor,
+                (pa, a) => new Authors { FullName = a.FullName }
+                ).ToList();
+            foreach (var author in authorsForPatent)
+            {
+                AddedAuthorsList.Items.Add(author);
+            }
+            AddedAuthorsList.Items.Refresh();
+
+            var agreementForPatent = context.PatentAgreement
+                .Where(pa => pa.IdPatent == _idPatent)
+                .Join(
+                context.Agreement,
+                pa => pa.IdAgreement,
+                a => a.IdAgreement,
+                (pa, a) => new Agreement { AgreementName = a.AgreementName }
+                ).ToList();
+            foreach (var agreement in agreementForPatent)
+            {
+                ListAgreements.Items.Add(agreement);
+            }
+            ListAgreements.Items.Refresh();
+
+            var paymentsDutiesForPatent = context.PatentPaymentsDuties
+                .Where(pp => pp.IdPatent == _idPatent)
+                .Join(
+                context.PaymentsDuties,
+                pp => pp.IdPayment,
+                p => p.IdPayDuties,
+                (pp, p) => new PaymentsDuties { DatePay = p.DatePay }
+                ).ToList();
+            foreach (var paymentDuties in paymentsDutiesForPatent)
+            {
+                PaymentsDutiesList.Items.Add(paymentDuties);
+            }
+            PaymentsDutiesList.Items.Refresh();
+
             PatentNameX.Text = patent.PatentName;
+            PatentNumberX.Text = patent.Number.ToString();
+            DatePriorityX.Text = patent.DatePriority.ToString();
+            DateRegistrationX.Text = patent.DateRegistration.ToString();
+            DateFinalX.Text = patent.DateFinal.ToString();
+            AddBidNumber.Text = patent.IdBid.ToString();
+            ComparingAnalysisActNumber.Text = patent.IdActComparingAnalysis.ToString();
+            ActImplementationNumber.Text = patent.IdActImplementation.ToString();
         }
 
         private void AddAgreement_Click(object sender, RoutedEventArgs e)
@@ -66,15 +116,11 @@ namespace DashaD
                 .Select(b => b.IdActUse).FirstOrDefault()
             });
             context.SaveChanges();
-
             int agreement = context.Agreement.Max(b => b.IdAgreement);
             Agreement agr = context.Agreement.Where(b => b.IdAgreement == agreement).FirstOrDefault();
 
-            if (CheckAgreement(agr) == false)
-            {
-                ListAgreements.Items.Add(agreement);
-                ListAgreements.Items.Refresh();
-            }
+            ListAgreements.Items.Add(agreement);
+            ListAgreements.Items.Refresh();
         }
 
         private bool CheckAgreement(Agreement agr)
@@ -84,6 +130,34 @@ namespace DashaD
             foreach (Agreement el in context.Agreement)
             {
                 if (el.IdAgreement == agr.IdAgreement)
+                {
+                    check = true;
+                }
+            }
+            return check;
+        }
+
+        private bool CheckPaymentsDuties(PaymentsDuties pd)
+        {
+            ApplicationContext context = new ApplicationContext();
+            bool check = false;
+            foreach (PaymentsDuties el in context.PaymentsDuties)
+            {
+                if (el.IdPayDuties == pd.IdPayDuties)
+                {
+                    check = true;
+                }
+            }
+            return check;
+        }
+
+        private bool CheckLetterAuthors(LetterAuthor la)
+        {
+            ApplicationContext context = new ApplicationContext();
+            bool check = false;
+            foreach (LetterAuthor el in context.LetterAuthor)
+            {
+                if (el.IdLetterAuthor == la.IdLetterAuthor)
                 {
                     check = true;
                 }
@@ -205,46 +279,62 @@ namespace DashaD
         private void ChangePatent_Click(object sender, RoutedEventArgs e)
         {
             using ApplicationContext context = new();
-            Patents patent = context.Patent.First(p => p.IdPatent == _idPatent);
-            var authorsForPatent = context.PatentAuthors
-            .Where(pa => pa.IdPatent == _idPatent)
-            .Join(
-            context.Author,
-            pa => pa.IdAuthor,
-            a => a.IdAuthor,
-            (pa, a) => new Authors { FullName = a.FullName }
-            )
-            .ToList();
-            foreach (var author in authorsForPatent)
-            {
-                AddedAuthorsList.Items.Add(author);
-            }
-            AddedAuthorsList.Items.Refresh();
 
-            patent.PatentName = PatentNameX.Text;
-            patent.Number = long.Parse(PatentNumberX.Text);
-            patent.DatePriority = DateOnly.ParseExact(DatePriorityX.Text, "dd.MM.yyyy");
-            patent.DateRegistration = DateOnly.ParseExact(DateRegistrationX.Text, "dd.MM.yyyy");
-            patent.DateFinal = DateOnly.ParseExact(DateFinalX.Text, "dd.MM.yyyy");
-            patent.IdBid = context.Bids.Where(b => b.BidNumber == long.Parse(AddBidNumber.Text)).Select(b => b.IdBid).FirstOrDefault();
-            patent.IdActComparingAnalysis = context.Analysis.Where(a => a.ActNumber == long.Parse(ComparingAnalysisActNumber.Text)).Select(a => a.IdActComparingAnalysis).FirstOrDefault();
-            patent.IdActImplementation = context.Implementation.Where(i => i.ActNumber == long.Parse(ActImplementationNumber.Text)).Select(i => i.IdActImplementation).FirstOrDefault();
-            // PatentNameX.Text = patent.PatentName;
-            //AddBidNumber.Text = patent.IdBid.ToString();
-            //AddBidNumber.Text = patent.IdBid.ToString();
-            //AddBidNumber.Text = patent.IdBid.ToString();
-            //AddBidNumber.Text = patent.IdBid.ToString();
+            int paymentDuties = context.PaymentsDuties.Max(p => p.IdPayDuties);
+            PaymentsDuties pd = context.PaymentsDuties.Where(p => p.IdPayDuties == paymentDuties).FirstOrDefault();
+            foreach (PaymentsDuties item in PaymentsDutiesList.Items)
+            {
+                if (CheckPaymentsDuties(pd) == false)
+                {
+                    context.PatentPaymentsDuties.Add(new PatentPaymentsDuties
+                    {
+                        IdPatent = context.Patent.Where(p => p.Number == long.Parse(PatentNumberX.Text))
+                                           .Select(p => p.IdPatent).FirstOrDefault(),
+                        IdPayment = item.IdPayDuties,
+                    });
+                }
+            }
+
+            int letterAuthors = context.LetterAuthor.Max(l => l.IdLetterAuthor);
+            LetterAuthor la = context.LetterAuthor.Where(l => l.IdLetterAuthor == letterAuthors).FirstOrDefault();
+            foreach (LetterAuthor item in LettersAuthorsList.Items)
+            {
+                if (CheckLetterAuthors(la) == false)
+                {
+                    context.PatentLetterAuthors.Add(new PatentLetterAuthor
+                    {
+                        IdPatent = context.Patent.Where(p => p.Number == long.Parse(PatentNumberX.Text))
+                                            .Select(p => p.IdPatent).FirstOrDefault(),
+                        IdLetter = item.IdLetterAuthor,
+                    });
+                }
+            }
+
+            int agreement = context.Agreement.Max(b => b.IdAgreement);
+            Agreement agr = context.Agreement.Where(b => b.IdAgreement == agreement).FirstOrDefault();
+
+            foreach (Agreement item in ListAgreements.Items)
+            {
+                if (CheckAgreement(agr) == false)
+                {
+                    context.PatentAgreement.Add(new PatentAgreement
+                    {
+                        IdPatent = context.Patent.Where(p => p.Number == long.Parse(PatentNumberX.Text))
+                        .Select(p => p.IdPatent).FirstOrDefault(),
+                        IdAgreement = item.IdAgreement,
+                    });
+                }
+            }
 
             context.SaveChanges();
             PatentsPage.View(_grid);
+            this.Close();
         }
 
 
         private void BackPatent_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-
-            // Опционально: открываем главное окно
             var mainWindow = new MainWindow();
             mainWindow.Show();
         }
@@ -274,11 +364,10 @@ namespace DashaD
             //ReplacePlaceholder(doc, "<РЕФЕРАТ>", BidReport.Text
 
 
-
             string tempFilePath = Path.GetTempFileName() + ".docx";
             doc.SaveAs2(tempFilePath);
 
-            doc.PrintOut(); //это точно надо
+            doc.PrintOut();
 
             doc.Close();
             wordApp.Quit();

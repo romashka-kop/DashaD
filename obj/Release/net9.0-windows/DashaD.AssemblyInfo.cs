@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DashaD")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+18b04a3d6a22a07a197e05baf5b9760fb07163d7")]
 [assembly: System.Reflection.AssemblyProductAttribute("DashaD")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DashaD")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

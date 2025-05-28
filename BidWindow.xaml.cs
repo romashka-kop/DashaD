@@ -45,6 +45,7 @@ namespace DashaD
             {
                 AddedAuthorsList.Items.Add(author);
             }
+            AddedAuthorsList.Items.Refresh();
 
             var paymentForBid = context.BidPayments
                 .Where(bp => bp.IdBid == _idBid)
@@ -59,6 +60,7 @@ namespace DashaD
             {
                 AddPaymentsList.Items.Add(payment);
             }
+            AddPaymentsList.Items.Refresh();
             
             var notificationForBid = context.BidNotification
                 .Where(bn => bn.IdBid == _idBid)
@@ -69,13 +71,11 @@ namespace DashaD
                 (bn, n) => new Notification { Name = n.Name }
                 )
                 .ToList();
-
             foreach (var notification in notificationForBid)
             {
                 AddNotficationsList.Items.Add(notification);
             }
-
-            AddedAuthorsList.Items.Refresh();
+            AddNotficationsList.Items.Refresh();
 
             BidNumber.Text = bid.BidNumber.ToString();
             BidDate.Text = bid.DateBid.ToString();
@@ -84,6 +84,33 @@ namespace DashaD
             BidReport.Text = bid.Report;
             BidNumberDate.Text = bid.NumberDate.ToString();
             BidLetter.Text = bid.Letter;
+        }
+
+        private bool CheckPayments(Payments pay)
+        {
+            ApplicationContext context = new ApplicationContext();
+            bool check = false;
+            foreach (Payments el in context.Payments)
+            {
+                if (el.IdPay == pay.IdPay)
+                {
+                    check = true;
+                }
+            }
+            return check;
+        }
+        private bool CheckNotification(Notification not)
+        {
+            ApplicationContext context = new ApplicationContext();
+            bool check = false;
+            foreach (Notification el in context.Notification)
+            {
+                if (el.IdNotification == not.IdNotification)
+                {
+                    check = true;
+                }
+            }
+            return check;
         }
 
         private void BidNumberDate_TextChanged(object sender, TextChangedEventArgs e)
@@ -163,7 +190,8 @@ namespace DashaD
             doc.Activate();
 
             ReplacePlaceholder(doc, "<НОМЕР ЗАЯВКИ>", BidNumber.Text);
-            string authorsList = GetAuthorsFromListBox();
+            string authorsRaw = GetAuthorsFromListBox();
+            string authorsList = authorsRaw.Replace("\r\n", ", ").Replace("\n", ", ").Replace("\r", ", ");
             ReplacePlaceholder(doc, "<ФИО>", authorsList);
             ReplacePlaceholder(doc, "<ФОРМУЛА>", BidFormula.Text);
             ReplacePlaceholder(doc, "<ОПИСАНИЕ>", BidDescription.Text);
@@ -209,11 +237,37 @@ namespace DashaD
         {
             using ApplicationContext context = new ApplicationContext();
 
-            Bid bid = (Bid)context.Bids.Where(b => b.IdBid == _idBid);
-            bid.BidNumber = long.Parse(BidNumber.Text);//вот так со всеми а у меня почемуто патенты ошибку выдавали какую
-            //author.Name = AuthorName.Text; только дата или номер
-            context.SaveChanges();
+            int payments = context.Payments.Max(p => p.IdPay);
+            Payments pay = context.Payments.Where(p => p.IdPay == payments).FirstOrDefault();
+            foreach (Payments item in AddPaymentsList.Items)
+            {
+                if (CheckPayments(pay) == false)
+                {
+                    context.BidPayments.Add(new BidPayments
+                    {
+                        IdBid = context.Bids.Where(b => b.BidNumber == long.Parse(BidNumber.Text))
+                        .Select(b => b.IdBid).FirstOrDefault(),
+                        IdPay = item.IdPay,
+                    });
+                }
+            }
 
+            int notification = context.Notification.Max(n => n.IdNotification);
+            Notification not = context.Notification.Where(n => n.IdNotification == notification).FirstOrDefault();
+            foreach (Notification item in AddNotficationsList.Items)
+            {
+                if (CheckNotification(not) == false)
+                {
+                    context.BidNotification.Add(new BidNotification
+                    {
+                        IdBid = context.Bids.Where(b => b.BidNumber == long.Parse(BidNumber.Text))
+                        .Select(b => b.IdBid).FirstOrDefault(),
+                        IdNotification = item.IdNotification,
+                    });
+                }
+            }
+
+            context.SaveChanges();
             BidPage.View(_grid);
             this.Close();
         }
