@@ -17,6 +17,7 @@ using Microsoft.Office.Interop.Word;
 using System.IO;
 using System.Xml.Linq;
 using Path = System.IO.Path;
+using Microsoft.Data.SqlClient;
 
 namespace DashaD
 {
@@ -119,7 +120,7 @@ namespace DashaD
             int agreement = context.Agreement.Max(b => b.IdAgreement);
             Agreement agr = context.Agreement.Where(b => b.IdAgreement == agreement).FirstOrDefault();
 
-            ListAgreements.Items.Add(agreement);
+            ListAgreements.Items.Add(context.Agreement.Where(a => a.IdAgreement == agreement).FirstOrDefault());
             ListAgreements.Items.Refresh();
         }
 
@@ -356,13 +357,19 @@ namespace DashaD
             Document doc = wordApp.Documents.Open(templatePath);
             doc.Activate();
 
-            //ReplacePlaceholder(doc, "<НОМЕР ЗАЯВКИ>", BidNumber.Text);
-            //string authorsList = GetAuthorsFromListBox();
-            //ReplacePlaceholder(doc, "<ФИО>", authorsList);
-            //ReplacePlaceholder(doc, "<ФОРМУЛА>", BidFormula.Text);
-            //ReplacePlaceholder(doc, "<ОПИСАНИЕ>", BidDescription.Text);
-            //ReplacePlaceholder(doc, "<РЕФЕРАТ>", BidReport.Text
-
+            ReplacePlaceholder(doc, "<НОМЕР ПАТЕНТА>", PatentNumberX.Text);
+            ReplacePlaceholder(doc, "<НАЗВАНИЕ ПАТЕНТА>", PatentNameX.Text);
+            string authorsRaw = GetAuthorsFromListBox();
+            string authorsList = authorsRaw.Replace("\r\n", ", ").Replace("\n", ", ").Replace("\r", ", ");
+            ReplacePlaceholder(doc, "<ФИО>", authorsList);
+            ReplacePlaceholder(doc, "<НОМЕР ЗАЯВКИ>", AddBidNumber.Text);
+            ReplacePlaceholder(doc, "<ДАТА ПРИОРИТЕТ>", DatePriorityX.Text);
+            ReplacePlaceholder(doc, "<ДАТА РЕГ>", DateRegistrationX.Text);
+            ReplacePlaceholder(doc, "<ДАТА СРОК>", DateFinalX.Text);
+            var bidDetails = GetBidDetails(AddBidNumber.Text);
+            ReplacePlaceholder(doc, "<ФОРМУЛА>", bidDetails.Formula);
+            ReplacePlaceholder(doc, "<ОПИСАНИЕ>", bidDetails.Description);
+            ReplacePlaceholder(doc, "<РЕФЕРАТ>", bidDetails.Report);
 
             string tempFilePath = Path.GetTempFileName() + ".docx";
             doc.SaveAs2(tempFilePath);
@@ -373,6 +380,59 @@ namespace DashaD
             wordApp.Quit();
 
             File.Delete(tempFilePath);
+        }
+
+        public (string Formula, string Description, string Report) GetBidDetails(string idBid)
+        {
+            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=dbD;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+
+            string formula = "";
+            string description = "";
+            string report = "";
+
+            string query = "SELECT Formula, Description, Report FROM BidDetails WHERE IdBid = @IdBid";
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@IdBid", idBid);
+                    connection.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            formula = reader["Formula"]?.ToString() ?? "";
+                            description = reader["Description"]?.ToString() ?? "";
+                            report = reader["Report"]?.ToString() ?? "";
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Ошибка при получении данных: " + ex.Message);
+            }
+
+            return (formula, description, report);
+        }
+
+
+        private string GetAuthorsFromListBox()
+        {
+            var authors = new List<string>();
+
+            foreach (var item in AddedAuthorsList.Items)
+            {
+                if (item is Authors author)
+                {
+                    authors.Add(author.FullName);
+                }
+            }
+
+            return string.Join(Environment.NewLine, authors);
         }
 
         private void ReplacePlaceholder(Document doc, string placeholder, string value)

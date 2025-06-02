@@ -26,15 +26,15 @@
                     <TextBlock Text="Номер" FontSize="15"/>
                     <TextBox x:Name="PatentNumberX" Width="190" FontSize="15"/>
                     <TextBlock Text="Приоритет изобретения" FontSize="15"/>
-                    <TextBox x:Name="DatePriorityX" Width="190" FontSize="15"/>
+                    <TextBox x:Name="DatePriorityX" PreviewTextInput="DateInputTextBox_PreviewTextInput" TextChanged="DateInputTextBox_TextChanged" Width="190" FontSize="15"/>
                     <TextBlock FontSize="15">
                         Зарегистрировано в Государственном
                         <LineBreak/>
                         реестре изобретений РФ
                     </TextBlock>
-                    <TextBox x:Name="DateRegistrationX" Width="190" FontSize="15"/>
+                    <TextBox x:Name="DateRegistrationX" PreviewTextInput="DateInputTextBox_PreviewTextInput" TextChanged="DateInputTextBox_TextChanged" Width="190" FontSize="15"/>
                     <TextBlock Text="Срок действия патента истекает" FontSize="15"/>
-                    <TextBox x:Name="DateFinalX" Width="190" FontSize="15"/>
+                    <TextBox x:Name="DateFinalX" PreviewTextInput="DateInputTextBox_PreviewTextInput" TextChanged="DateInputTextBox_TextChanged" Width="190" FontSize="15"/>
                 </TreeViewItem>
                 <TreeViewItem x:Name="Author" Header="Авторы" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top">
                     <ListBox FontSize="15" Width="200" Height="100" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" x:Name="AddedAuthorsList" DisplayMemberPath="FullName"/>
@@ -54,17 +54,16 @@
                     <TextBlock x:Name="TextName" Visibility="Collapsed" Text="Название" FontSize="15"/>
                     <TextBox Visibility="Collapsed" x:Name="AgreementName" Width="190" FontSize="15"/>
                     <TextBlock x:Name="TextPeriod" Visibility="Collapsed" Text="Период" FontSize="15"/>
-                    <TextBox Visibility="Collapsed" x:Name="AgreementPeriod" Width="150" FontSize="15"/>
-                    <TextBox Visibility="Collapsed" x:Name="AgreementPeriod1" Width="150" FontSize="15"/>
+                    <TextBox Visibility="Collapsed" PreviewTextInput="DateInputTextBox_PreviewTextInput" TextChanged="DateInputTextBox_TextChanged" x:Name="AgreementPeriod" Width="150" FontSize="15"/>
+                    <TextBox Visibility="Collapsed" PreviewTextInput="DateInputTextBox_PreviewTextInput" TextChanged="DateInputTextBox_TextChanged" x:Name="AgreementPeriod1" Width="150" FontSize="15"/>
                     <TextBlock x:Name="TextNumber" Visibility="Collapsed" Text="Номер" FontSize="15"/>
                     <TextBox Visibility="Collapsed" x:Name="AgreementNumber" Width="190" FontSize="15"/>
                     <TextBlock x:Name="TextData" Visibility="Collapsed" Text="Дата" FontSize="15"/>
-                    <TextBox Visibility="Collapsed" x:Name="AgreementDate" Width="190" FontSize="15"/>
                     <TreeViewItem x:Name="AgreementCreation" Visibility="Collapsed" Header="Договор за создание" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top">
                         <TextBlock Text="Номер" FontSize="15"/>
                         <TextBox x:Name="AgreementCreationNumber" Width="190" FontSize="15"/>
                         <TextBlock Text="Дата" FontSize="15"/>
-                        <TextBox x:Name="AgreementCreationDate" Width="190" FontSize="15"/>
+                        <TextBox x:Name="AgreementCreationDate" PreviewTextInput="DateInputTextBox_PreviewTextInput" TextChanged="DateInputTextBox_TextChanged" Width="190" FontSize="15"/>
                         <TextBlock Text="Договор" FontSize="15"/>
                         <TextBox x:Name="AgreementCreationFile" ScrollViewer.VerticalScrollBarVisibility="Auto" Height="275" TextWrapping="Wrap" Width="525" FontSize="15"/>
                     </TreeViewItem>
@@ -72,10 +71,10 @@
                         <TextBlock x:Name="UseNumber" Text="Номер" FontSize="15"/>
                         <TextBox x:Name="ActUseNumber" Width="190" FontSize="15"/>
                         <TextBlock x:Name="UseDate" Text="Дата" FontSize="15"/>
-                        <TextBox x:Name="ActUseDate" Width="190" FontSize="15"/>
+                        <TextBox x:Name="ActUseDate" PreviewTextInput="DateInputTextBox_PreviewTextInput" TextChanged="DateInputTextBox_TextChanged" Width="190" FontSize="15"/>
                         <TextBlock x:Name="UsePeriod" Text="Период" FontSize="15"/>
-                        <TextBox x:Name="ActUsePeriod" Width="190" FontSize="15"/>
-                        <TextBox x:Name="ActUsePeriod1" Width="190" FontSize="15"/>
+                        <TextBox x:Name="ActUsePeriod" PreviewTextInput="DateInputTextBox_PreviewTextInput" TextChanged="DateInputTextBox_TextChanged" Width="190" FontSize="15"/>
+                        <TextBox x:Name="ActUsePeriod1" PreviewTextInput="DateInputTextBox_PreviewTextInput" TextChanged="DateInputTextBox_TextChanged" Width="190" FontSize="15"/>
                         <TextBlock x:Name="UseFile" Text="Акт" FontSize="15"/>
                         <TextBox x:Name="ActUseFile" ScrollViewer.VerticalScrollBarVisibility="Auto" Height="275" TextWrapping="Wrap" Width="525" FontSize="15"/>
                     </TreeViewItem>
@@ -84,39 +83,39 @@
                 </TreeViewItem>
                 <TreeViewItem x:Name="ActComparingAnalysis" Header="Акт о сопоставлении анализа" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top">
                     <TextBlock Text="Период" FontSize="15"/>
-                    <TextBox x:Name="ComparingAnalysisPeriodAct" Width="150" FontSize="15"/>
-                    <TextBox x:Name="ComparingAnalysisPeriodAct1" Width="150" FontSize="15"/>
+                    <TextBox x:Name="ComparingAnalysisPeriodAct" PreviewTextInput="DateInputTextBox_PreviewTextInput" TextChanged="DateInputTextBox_TextChanged" Width="150" FontSize="15"/>
+                    <TextBox x:Name="ComparingAnalysisPeriodAct1" PreviewTextInput="DateInputTextBox_PreviewTextInput" TextChanged="DateInputTextBox_TextChanged" Width="150" FontSize="15"/>
                     <TextBlock Text="Номер" FontSize="15"/>
                     <TextBox x:Name="ComparingAnalysisActNumber" Width="190" FontSize="15"/>
                     <TextBlock Text="Дата" FontSize="15"/>
-                    <TextBox x:Name="ComparingAnalysisDateAct" Width="190" FontSize="15"/>
+                    <TextBox x:Name="ComparingAnalysisDateAct" PreviewTextInput="DateInputTextBox_PreviewTextInput" TextChanged="DateInputTextBox_TextChanged" Width="190" FontSize="15"/>
                 </TreeViewItem>
                 <TreeViewItem x:Name="ActImplementation" Header="Акт внедрения" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top">
                     <TextBlock Text="Номер" FontSize="15"/>
                     <TextBox x:Name="ActImplementationNumber" Width="190" FontSize="15"/>
                     <TextBlock Text="Дата" FontSize="15"/>
-                    <TextBox x:Name="ActImplementationDate" Width="190" FontSize="15"/>
+                    <TextBox x:Name="ActImplementationDate" PreviewTextInput="DateInputTextBox_PreviewTextInput" TextChanged="DateInputTextBox_TextChanged" Width="190" FontSize="15"/>
                 </TreeViewItem>
                 <TreeViewItem x:Name="PaymentDuties" Header="Платежки за пошлины" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top">
                     <TextBlock Text="Период" FontSize="15"/>
-                    <TextBox x:Name="PaymentsDutiesPeriod" Width="150" FontSize="15"/>
-                    <TextBox x:Name="PaymentsDutiesPeriod1" Width="150" FontSize="15"/>
-                    <ListBox ScrollViewer.HorizontalScrollBarVisibility="Auto" Width="Auto" Height="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" x:Name="PaymentsDutiesList"/>
+                    <TextBox x:Name="PaymentsDutiesPeriod" PreviewTextInput="DateInputTextBox_PreviewTextInput" TextChanged="DateInputTextBox_TextChanged" Width="150" FontSize="15"/>
+                    <TextBox x:Name="PaymentsDutiesPeriod1" PreviewTextInput="DateInputTextBox_PreviewTextInput" TextChanged="DateInputTextBox_TextChanged" Width="150" FontSize="15"/>
+                    <ListBox ScrollViewer.HorizontalScrollBarVisibility="Auto" Width="Auto" Height="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" x:Name="PaymentsDutiesList" DisplayMemberPath="DatePay"/>
                     <Button x:Name="AddPayment" Content="+" Width="25" Height="25" Click="AddPayment_Click"/>
                     <TextBlock Visibility="Collapsed" x:Name="TextDatePayment" Text="Дата" FontSize="15"/>
-                    <TextBox Visibility="Collapsed" x:Name="PaymentsDutiesDate" Width="190" FontSize="15"/>
+                    <TextBox Visibility="Collapsed" PreviewTextInput="DateInputTextBox_PreviewTextInput" TextChanged="DateInputTextBox_TextChanged" x:Name="PaymentsDutiesDate" Width="190" FontSize="15"/>
                     <Button x:Name="AddPayments" Visibility="Collapsed" Content="Добавить" Click="AddPayments_Click"/>
                     <Button x:Name="ClosePayment" Visibility="Collapsed" Content="Закрыть" Click="ClosePayment_Click"/>
                 </TreeViewItem>
                 <TreeViewItem x:Name="LetterAuthor" Header="Письма с авторами" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top">
                     <TextBlock Text="Период" FontSize="15"/>
-                    <TextBox x:Name="LetterAuthorPeriod" Width="190" FontSize="15"/>
-                    <TextBox x:Name="LetterAuthorPeriod1" Width="190" FontSize="15"/>
+                    <TextBox x:Name="LetterAuthorPeriod" PreviewTextInput="DateInputTextBox_PreviewTextInput" TextChanged="DateInputTextBox_TextChanged" Width="190" FontSize="15"/>
+                    <TextBox x:Name="LetterAuthorPeriod1" PreviewTextInput="DateInputTextBox_PreviewTextInput" TextChanged="DateInputTextBox_TextChanged" Width="190" FontSize="15"/>
                     <TextBlock Text="Письма" FontSize="15"/>
                     <ListBox ScrollViewer.HorizontalScrollBarVisibility="Auto" Width="Auto" Height="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" x:Name="LettersAuthorsList" DisplayMemberPath="LetterNumber"/>
                     <Button x:Name="AddLettersAuthors" Content="+" Width="25" Height="25" Click="AddLettersAuthors_Click"/>
                     <TextBlock x:Name="LetterDate" Text="Дата" FontSize="15" Visibility="Collapsed"/>
-                    <TextBox x:Name="LetterAuthorDate" Width="190" FontSize="15" Visibility="Collapsed"/>
+                    <TextBox x:Name="LetterAuthorDate" PreviewTextInput="DateInputTextBox_PreviewTextInput" TextChanged="DateInputTextBox_TextChanged" Width="190" FontSize="15" Visibility="Collapsed"/>
                     <TextBlock x:Name="LetterNumber" Text="Номер" FontSize="15" Visibility="Collapsed"/>
                     <TextBox x:Name="LetterAuthorNumber" Width="190" FontSize="15" Visibility="Collapsed"/>
                     <TextBlock x:Name="FileLetter" Text="Письмо" FontSize="15" Visibility="Collapsed"/>

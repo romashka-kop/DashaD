@@ -33,8 +33,5 @@ namespace DashaD.Models
         //public virtual ActImplementation Act_Implementation { get; set; }
         //public virtual Bid Request { get; set; }
 
-        //public List<Agreement> Agreements { get; set; }
-        //public List<PaymentsDuties> Payments { get; set; }
-        //public List<Authors> Author { get; set; }
     }
 }

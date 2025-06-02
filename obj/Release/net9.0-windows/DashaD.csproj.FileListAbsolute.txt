@@ -33,11 +33,9 @@ C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\R
 C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Release\net9.0-windows\Microsoft.IdentityModel.Tokens.dll
 C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Release\net9.0-windows\Microsoft.SqlServer.Server.dll
 C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Release\net9.0-windows\System.ClientModel.dll
-C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Release\net9.0-windows\System.Formats.Asn1.dll
 C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Release\net9.0-windows\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Release\net9.0-windows\System.Memory.Data.dll
 C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Release\net9.0-windows\System.Runtime.Caching.dll
-C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Release\net9.0-windows\System.Text.Json.dll
 C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Release\net9.0-windows\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
 C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Release\net9.0-windows\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
 C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\bin\Release\net9.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
@@ -88,3 +86,6 @@ C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\R
 C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Release\net9.0-windows\Pages\InputPage.baml
 C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Release\net9.0-windows\Pages\PatentsPage.baml
 C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Release\net9.0-windows\Pages\RegistrationPage.baml
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Release\net9.0-windows\DashaD.sourcelink.json
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Release\net9.0-windows\Pages\EmployeePage.g.cs
+C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\Release\net9.0-windows\Pages\EmployeePage.baml

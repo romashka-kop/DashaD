@@ -29,13 +29,7 @@ namespace DashaD
                 {
                 p.IdPatent,
                 p.PatentName,
-                p.Number,
-                Authors = string.Join(", ", context.PatentAuthors
-                .Where(pa => pa.IdPatent == p.IdPatent)
-                .Join(context.Author,
-                  pa => pa.IdAuthor,
-                  a => a.IdAuthor,
-                  (pa, a) => a.FullName))
+                p.Number
                 }).ToList();
 
             patentView.ItemsSource = patentsWithAuthors;
@@ -59,11 +53,11 @@ namespace DashaD
             {
                 using ApplicationContext context = new ApplicationContext();
                 var selectedItem = PatentsView.SelectedItem as dynamic;
-                var patent = (Patents)PatentsView.SelectedItem;
+                int id = selectedItem.IdPatent;
 
                 if (selectedItem != null)
                 {
-                    int patentRet = context.Patent.Where(p => p.IdPatent == patent.IdPatent).Select(p => p.IdPatent).FirstOrDefault();
+                    int patentRet = context.Patent.Where(p => p.IdPatent == id).Select(p => p.IdPatent).FirstOrDefault();
                     var newPatentWindow = new PatentWindow(patentRet, PatentsView, _isAdm);
                     newPatentWindow.Owner = Window.GetWindow(this);
                     newPatentWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;

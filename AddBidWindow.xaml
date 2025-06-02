@@ -40,7 +40,7 @@
                 <TextBox x:Name="BidNumberDate" Width="190" FontSize="15"/>
                 <TreeViewItem Header="Платежки" FontSize="15">
                     <Button x:Name="AddPayments" Content="+" Width="25" Height="25" Click="AddPayments_Click"/>
-                    <ListBox Width="200" Height="100" ScrollViewer.VerticalScrollBarVisibility="Auto" x:Name="AddPaymentsList" Visibility="Collapsed"/>
+                    <ListBox Width="200" Height="100" ScrollViewer.VerticalScrollBarVisibility="Auto" x:Name="AddPaymentsList" Visibility="Collapsed" DisplayMemberPath="File"/>
                     <TextBlock x:Name="File" Text="Файл" Visibility="Collapsed" FontSize="15"/>
                     <Button Content="Добавить документ" x:Name="Payment" Visibility="Collapsed" Width="150" FontSize="15" Click="Payment_Click"/>
                     <Button x:Name="AddPayment" Visibility="Collapsed" Content="Добавить" Click="AddPayment_Click"/>
@@ -48,7 +48,7 @@
                 </TreeViewItem>
                 <TreeViewItem Header="Уведомления" FontSize="15">
                     <Button x:Name="AddNotifications" Content="+" Width="25" Height="25" Click="AddNotifications_Click"/>
-                    <ListBox Width="200" Height="100" ScrollViewer.VerticalScrollBarVisibility="Auto" x:Name="AddNotificationsList" Visibility="Collapsed"/>
+                    <ListBox Width="200" Height="100" ScrollViewer.VerticalScrollBarVisibility="Auto" x:Name="AddNotificationsList" Visibility="Collapsed" DisplayMemberPath="Name"/>
                     <TextBlock x:Name="TextNotificationName" Text="Название" Visibility="Collapsed" FontSize="15"/>
                     <TextBox x:Name="NotificationName" Visibility="Collapsed" Width="190" FontSize="15"/>
                     <TextBlock x:Name="TextNotificationAddressee" Text="Адресат" Visibility="Collapsed" FontSize="15"/>

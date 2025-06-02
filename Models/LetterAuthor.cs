@@ -23,8 +23,5 @@ namespace DashaD.Models
         public long LetterNumber { get; set; }
         [Required]
         public string File { get; set; }
-        [Required]
-        public int IdPatent { get; set; }
-        public virtual Patents Patent { get; set; }
     }
 }

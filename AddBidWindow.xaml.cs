@@ -27,7 +27,6 @@ namespace DashaD
 
         private void DateInputTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            // Разрешаем только цифры
             if (!char.IsDigit(e.Text, 0))
                 e.Handled = true;
         }
@@ -39,12 +38,10 @@ namespace DashaD
             var textBox = sender as TextBox;
             string text = textBox.Text;
 
-            // Удаляем все точки
             string digitsOnly = RemoveNonDigits(text);
 
             _isUpdating = true;
 
-            // Ограничиваем длину
             if (digitsOnly.Length > 8)
                 digitsOnly = digitsOnly.Substring(0, 8);
 
@@ -81,7 +78,6 @@ namespace DashaD
 
             string input = BidNumberDate.Text.Trim();
 
-            // Регулярное выражение: номер-дата в формате "123-01.01.2024"
             string pattern = @"^\d+-\d{2}\.\d{2}\.\d{4}$";
 
             if (string.IsNullOrWhiteSpace(input))
@@ -98,25 +94,7 @@ namespace DashaD
                 return;
             }
 
-            foreach (Payments item in AddPaymentsList.Items)
-            {
-                context.BidPayments.Add(new BidPayments
-                {
-                    IdBid = context.Bids.Where(b => b.BidNumber == long.Parse(BidNumber.Text))
-                    .Select(b => b.IdBid).FirstOrDefault(),
-                    IdPay = item.IdPay,
-                });
-            }
-
-            foreach (Notification item in AddNotificationsList.Items)
-            {
-                context.BidNotification.Add(new BidNotification
-                {
-                    IdBid = context.Bids.Where(b => b.BidNumber == long.Parse(BidNumber.Text))
-                    .Select(b => b.IdBid).FirstOrDefault(),
-                    IdNotification = item.IdNotification,
-                });
-            }
+            
 
             context.Bids.Add(new Models.Bid
             {
@@ -130,6 +108,26 @@ namespace DashaD
             });
 
             context.SaveChanges();
+            
+            foreach (Payments item in AddPaymentsList.Items)
+            {
+                context.BidPayments.Add(new BidPayments
+                {
+                    IdBid = context.Bids.Where(b => b.BidNumber == long.Parse(BidNumber.Text))
+                        .Select(b => b.IdBid).FirstOrDefault(),
+                    IdPay = item.IdPay,
+                });
+            }
+
+            foreach (Notification item in AddNotificationsList.Items)
+            {
+                context.BidNotification.Add(new BidNotification
+                {
+                    IdBid = context.Bids.Where(b => b.BidNumber == long.Parse(BidNumber.Text))
+                        .Select(b => b.IdBid).FirstOrDefault(),
+                    IdNotification = item.IdNotification,
+                });
+            }
 
             foreach (Authors item in AddedAuthorsList.Items)
             {
@@ -240,8 +238,7 @@ namespace DashaD
             });
             context.SaveChanges();
             int Id = context.Payments.Max(b => b.IdPay);
-            AddPaymentsList.Items.Add(context.Payments.Where(b => b.IdPay == Id)
-                .Select(b => b.File).FirstOrDefault());
+            AddPaymentsList.Items.Add(context.Payments.Where(b => b.IdPay == Id).FirstOrDefault());
             AddPaymentsList.Items.Refresh();
         }
 
@@ -259,8 +256,7 @@ namespace DashaD
             NotificationAddressee.Clear();
             NotificationMessage.Clear();
             int Id = context.Notification.Max(b => b.IdNotification);
-            AddNotificationsList.Items.Add(context.Notification.Where(b => b.IdNotification == Id)
-                .Select(b => b.Name).FirstOrDefault());
+            AddNotificationsList.Items.Add(context.Notification.Where(b => b.IdNotification == Id).FirstOrDefault());
             AddNotificationsList.Items.Refresh();
         }
 

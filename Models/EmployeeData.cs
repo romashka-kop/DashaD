@@ -23,7 +23,7 @@ namespace DashaD.Models
         public string Patronymic { get; set; }
 
         [Required]
-        public int Role { get; set; }
+        public string Role { get; set; }
 
         [Required]
         public string Department { get; set; }
@@ -33,5 +33,13 @@ namespace DashaD.Models
 
         [Required]
         public string Password { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        public string FullName { get; set; } //AS (Surname + ' ' + Name + ' ' + Patronymic)
+
+        public bool IsValidRole()
+        {
+            return Role == "Администратор" || Role == "Пользователь";
+        }
+
     }
 }

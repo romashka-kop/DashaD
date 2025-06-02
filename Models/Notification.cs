@@ -18,7 +18,5 @@ namespace DashaD.Models
         public string Addressee { get; set; }
         [Required]
         public string Message { get; set; }
-        [Required]
-        public int IdBid { get; set; }
     }
 }

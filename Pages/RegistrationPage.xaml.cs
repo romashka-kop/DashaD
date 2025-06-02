@@ -61,6 +61,13 @@ namespace DashaD
         {
             string selectedRole = (Role.SelectedItem as ComboBoxItem)?.Content?.ToString();
 
+            var tempEmployee = new EmployeeData { Role = selectedRole };
+            if (!tempEmployee.IsValidRole())
+            {
+                MessageBox.Show("Выберите корректную роль: Администратор или Пользователь.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             string surname = Surname.Text;
             string name = Name.Text;
             string patronymic = Patronymic.Text;
@@ -69,12 +76,9 @@ namespace DashaD
             string password = PasswordBox.Password;
             string confirmPassword = ConfirmPasswordBox.Password;
 
-            
-
             if (string.IsNullOrWhiteSpace(surname) ||
                 string.IsNullOrWhiteSpace(name) ||
                 string.IsNullOrWhiteSpace(patronymic) ||
-                string.IsNullOrWhiteSpace(department) ||
                 string.IsNullOrWhiteSpace(email) ||
                 string.IsNullOrWhiteSpace(password) ||
                 string.IsNullOrWhiteSpace(confirmPassword))
@@ -82,8 +86,8 @@ namespace DashaD
                 MessageBox.Show("Все поля должны быть заполнены.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            
-            if (selectedRole == "Адм")
+
+            if (selectedRole == "Администратор")
             {
                 var codeWindow = new AdminCodeWindow();
                 codeWindow.Owner = Window.GetWindow(this);
@@ -94,27 +98,6 @@ namespace DashaD
                     MessageBox.Show("Регистрация отменена: неверный код администратора", "Ошибка!", MessageBoxButton.OK);
                     return;
                 }
-            }
-            try
-            {
-                using ApplicationContext context = new ApplicationContext();
-                context.EmployeeData.Add(new Models.EmployeeData
-                {
-                    Surname = surname,
-                    Name = name,
-                    Patronymic = patronymic,
-                    Department = department,
-                    Email = email,
-                    Password = BCrypt.Net.BCrypt.HashPassword(password),
-                    Role = Role.SelectedIndex,
-                });
-                context.SaveChanges();
-                MessageBox.Show("Регистрация прошла успешно.");
-            }
-            catch (DbUpdateException ex)
-            {
-                var innerException = ex.InnerException?.Message;
-                MessageBox.Show($"Ошибка при сохранении: {innerException}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
             if (!IsValidEmail(email))
@@ -135,7 +118,30 @@ namespace DashaD
                 return;
             }
 
+            try
+            {
+                using ApplicationContext context = new ApplicationContext();
+                context.EmployeeData.Add(new Models.EmployeeData
+                {
+                    Surname = surname,
+                    Name = name,
+                    Patronymic = patronymic,
+                    Department = department,
+                    Email = email,
+                    Password = BCrypt.Net.BCrypt.HashPassword(password),
+                    Role = selectedRole
+                });
+                context.SaveChanges();
+                MessageBox.Show("Регистрация прошла успешно.");
+            }
+            catch (DbUpdateException ex)
+            {
+                var innerException = ex.InnerException?.Message;
+                MessageBox.Show($"Ошибка при сохранении: {innerException}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
             NavigationService.Navigate(new InputPage());
         }
+
     }
 }

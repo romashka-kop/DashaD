@@ -35,7 +35,7 @@
             <TextBox x:Name="Email" Canvas.Left="40" Canvas.Top="110" Width="130"/>
             <TextBlock Text="Роль" Canvas.Left="40" Canvas.Top="140" FontSize="18"/>
             <ComboBox x:Name="Role" Canvas.Left="40" Canvas.Top="165" SelectedIndex="1" Width="130">
-                <ComboBoxItem Content="Адм"/>
+                <ComboBoxItem Content="Администратор"/>
                 <ComboBoxItem Content="Пользователь"/>
             </ComboBox>
             <TextBlock Text="Пароль" Canvas.Left="40" Canvas.Top="190" FontSize="18"/>

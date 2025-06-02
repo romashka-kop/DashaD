@@ -1,5 +1,6 @@
 ﻿using DashaD.Context;
 using DashaD.Models;
+using DashaD.Pages;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -40,12 +41,25 @@ namespace DashaD
         {
             MainFrame.Navigate(new BidPage());
         }
-
+        private void ViewEmployee_Click(object sender, RoutedEventArgs e)
+        {
+            using ApplicationContext context = new ApplicationContext();
+            string role = context.EmployeeData
+                              .Where(e => e.IdEmployee == IdActivEmployee)
+                              .Select(e => e.Role)
+                              .FirstOrDefault();
+            if (role == "Пользователь")
+            {
+                MessageBox.Show("У вас нет прав для просмотра пользователей.", "Доступ запрещён", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            MainFrame.Navigate(new EmployeePage());
+        }
         public static bool CheckEmployee()
         {
             using ApplicationContext context = new ApplicationContext();
-            int role = context.EmployeeData.Where(e => e.IdEmployee == IdActivEmployee).Select(e =>  e.Role).FirstOrDefault();
-            if (role == 0)
+            string role = context.EmployeeData.Where(e => e.IdEmployee == IdActivEmployee).Select(e => e.Role).FirstOrDefault();
+            if (role == "Администратор")
             {
                 return true;
             }
@@ -54,6 +68,7 @@ namespace DashaD
                 return false;
             }
         }
+
 
         private void SettingsPatent_Click(object sender, RoutedEventArgs e)
         {
@@ -71,5 +86,7 @@ namespace DashaD
                 }
             }
         }
+
+
     }
 }

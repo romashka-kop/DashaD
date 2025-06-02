@@ -39,24 +39,24 @@
                 <TextBlock Text="Номер-Дата" FontSize="15"/>
                 <TextBox x:Name="BidNumberDate" Width="190" FontSize="15"/>
                 <TreeViewItem Header="Платежки" FontSize="15">
-                    <Button x:Name="AddPayments" Content="+" Width="25" Height="25"/>
-                    <ListBox Width="200" Height="100" ScrollViewer.VerticalScrollBarVisibility="Auto" x:Name="AddPaymentsList" Visibility="Collapsed" DisplayMemberPath="File"/>
-                    <TextBlock Text="Файл" Visibility="Collapsed" FontSize="15"/>
-                    <TextBox x:Name="Payment" Visibility="Collapsed" Width="190" FontSize="15"/>
-                    <Button x:Name="AddPayment" Visibility="Collapsed" Content="Добавить"/>
-                    <Button x:Name="ClosePayment" Visibility="Collapsed" Content="Закрыть"/>
+                    <Button x:Name="AddPayments" Content="+" Width="25" Height="25" Click="AddPayments_Click"/>
+                    <ListBox Width="200" Height="100" ScrollViewer.VerticalScrollBarVisibility="Auto" x:Name="AddPaymentsList" Visibility="Collapsed"/>
+                    <TextBlock x:Name="FilePay" Text="Файл" Visibility="Collapsed" FontSize="15"/>
+                    <Button Content="Добавить документ" x:Name="Payment" Visibility="Collapsed" Width="150" FontSize="15" Click="Payment_Click"/>
+                    <Button x:Name="AddPayment" Visibility="Collapsed" Content="Добавить" Click="AddPayment_Click"/>
+                    <Button x:Name="ClosePayment" Visibility="Collapsed" Content="Закрыть" Click="ClosePayment_Click"/>
                 </TreeViewItem>
                 <TreeViewItem Header="Уведомления" FontSize="15">
-                    <Button x:Name="AddNotfications" Content="+" Width="25" Height="25"/>
-                    <ListBox Width="200" Height="100" ScrollViewer.VerticalScrollBarVisibility="Auto" x:Name="AddNotficationsList" Visibility="Collapsed" DisplayMemberPath="Name"/>
-                    <TextBlock Text="Название" Visibility="Collapsed" FontSize="15"/>
-                    <TextBox x:Name="NotficationName" Visibility="Collapsed" Width="190" FontSize="15"/>
-                    <TextBlock Text="Адресат" Visibility="Collapsed" FontSize="15"/>
-                    <TextBox x:Name="NotficationAddressee" Visibility="Collapsed" Width="190" FontSize="15"/>
-                    <TextBlock Text="Сообщение" Visibility="Collapsed" FontSize="15"/>
-                    <TextBox x:Name="NotficationMessage" Visibility="Collapsed" Width="190" FontSize="15"/>
-                    <Button x:Name="AddNotfication" Visibility="Collapsed" Content="Добавить"/>
-                    <Button x:Name="CloseNotfication" Visibility="Collapsed" Content="Закрыть"/>
+                    <Button x:Name="AddNotifications" Content="+" Width="25" Height="25" Click="AddNotifications_Click"/>
+                    <ListBox Width="200" Height="100" ScrollViewer.VerticalScrollBarVisibility="Auto" x:Name="AddNotificationsList" Visibility="Collapsed" DisplayMemberPath="Name"/>
+                    <TextBlock x:Name="TextNotificationName" Text="Название" Visibility="Collapsed" FontSize="15"/>
+                    <TextBox x:Name="NotificationName" Visibility="Collapsed" Width="190" FontSize="15"/>
+                    <TextBlock x:Name="TextNotificationAddressee" Text="Адресат" Visibility="Collapsed" FontSize="15"/>
+                    <TextBox x:Name="NotificationAddressee" Visibility="Collapsed" Width="190" FontSize="15"/>
+                    <TextBlock x:Name="TextNotificationMessage" Text="Сообщение" Visibility="Collapsed" FontSize="15"/>
+                    <TextBox x:Name="NotificationMessage" Visibility="Collapsed" Width="190" Height="220" FontSize="15"/>
+                    <Button x:Name="AddNotification" Visibility="Collapsed" Content="Добавить" Click="AddNotification_Click"/>
+                    <Button x:Name="CloseNotification" Visibility="Collapsed" Content="Закрыть" Click="CloseNotification_Click"/>
                 </TreeViewItem>
 
                 <TreeViewItem Header="Авторы" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top">
@@ -67,6 +67,7 @@
         <Menu Height="35" Width="50" Grid.Column="3" HorizontalAlignment="Right" Margin="10">
             <MenuItem Header="'''" FontSize="35" FontWeight="Black">
                 <MenuItem Header="Создать документ" FontSize="18" Click="MenuItem_Click"/>
+                <MenuItem Header="Создать письмо" FontSize="18" Click="MenuItem_Click_1"/>
             </MenuItem>
         </Menu>
         <Button Grid.Column="2" Grid.Row="2" x:Name="UpdateBid" Content="Обновить" FontWeight="Bold" FontSize="16" Height="35" Width="180" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Margin="10" Click="UpdateBid_Click"/>

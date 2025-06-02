@@ -8,13 +8,13 @@ C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\obj\R
 DashaD
 none
 false
-TRACE;RELEASE;NET;NET9_0;NETCOREAPP
+TRACE;RELEASE;NET;NET9_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NET9_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 C:\Users\dar83\OneDrive\Рабочий стол\Диплом\DashaD\DashaD\App.xaml
-13176368710
+14231274741
 
-40-1562667317
-232-1613885990
-AddAuthorWindow.xaml;AddBidWindow.xaml;AddPatentWindow.xaml;AdminCodeWindow.xaml;AuthorWindow.xaml;BidWindow.xaml;MainWindow.xaml;Pages\AuthorsPage.xaml;Pages\BidPage.xaml;Pages\InputPage.xaml;Pages\PatentsPage.xaml;Pages\RegistrationPage.xaml;PatentWindow.xaml;
+41-2094547021
+23148928020
+AddAuthorWindow.xaml;AddBidWindow.xaml;AddPatentWindow.xaml;AdminCodeWindow.xaml;AuthorWindow.xaml;BidWindow.xaml;MainWindow.xaml;Pages\AuthorsPage.xaml;Pages\BidPage.xaml;Pages\EmployeePage.xaml;Pages\InputPage.xaml;Pages\PatentsPage.xaml;Pages\RegistrationPage.xaml;PatentWindow.xaml;
 
 False
 

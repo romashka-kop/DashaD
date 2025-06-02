@@ -1,12 +1,24 @@
-﻿using DashaD.Context;
-using DashaD.Models;
-using Microsoft.Office.Interop.Word;
-using System;
-using System.IO;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+using DashaD.Context;
+using DashaD.Models;
+using Microsoft.Office.Interop.Word;
+using System.IO;
 using System.Xml.Linq;
+using Path = System.IO.Path;
+using Microsoft.Data.SqlClient;
+using Microsoft.Win32;
 
 namespace DashaD
 {
@@ -18,6 +30,7 @@ namespace DashaD
         private int _idBid;
         private DataGrid _grid;
 
+        private static string _filePath = "";
         public BidWindow(int idBid, DataGrid grid)
         {
             _idBid = idBid;
@@ -73,9 +86,9 @@ namespace DashaD
                 .ToList();
             foreach (var notification in notificationForBid)
             {
-                AddNotficationsList.Items.Add(notification);
+                AddNotificationsList.Items.Add(notification);
             }
-            AddNotficationsList.Items.Refresh();
+            AddNotificationsList.Items.Refresh();
 
             BidNumber.Text = bid.BidNumber.ToString();
             BidDate.Text = bid.DateBid.ToString();
@@ -119,11 +132,9 @@ namespace DashaD
 
             if (string.IsNullOrWhiteSpace(input))
             {
-                // Можно сообщить пользователю, что поле не заполнено
                 return;
             }
 
-            // Проверяем наличие дефиса
             if (!input.Contains('-'))
             {
                 ShowError("Введите значение в формате 'номер-дата' (например, 123-05.04.2025).");
@@ -141,22 +152,18 @@ namespace DashaD
             string numberPart = parts[0];
             string datePart = parts[1];
 
-            // Проверка номера
             if (!int.TryParse(numberPart, out _))
             {
                 ShowError("Перед дефисом должен быть номер (целое число).");
                 return;
             }
 
-            // Проверка даты
             if (!DateTime.TryParseExact(datePart, "dd.MM.yyyy", null, System.Globalization.DateTimeStyles.None, out _))
             {
                 ShowError("После дефиса должна быть дата в формате ДД.ММ.ГГГГ.");
                 return;
             }
 
-            // Если всё верно — можно продолжить
-            // Например, скрыть ошибку
             HideError();
         }
 
@@ -254,7 +261,7 @@ namespace DashaD
 
             int notification = context.Notification.Max(n => n.IdNotification);
             Notification not = context.Notification.Where(n => n.IdNotification == notification).FirstOrDefault();
-            foreach (Notification item in AddNotficationsList.Items)
+            foreach (Notification item in AddNotificationsList.Items)
             {
                 if (CheckNotification(not) == false)
                 {
@@ -270,6 +277,125 @@ namespace DashaD
             context.SaveChanges();
             BidPage.View(_grid);
             this.Close();
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            string templatePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Document", "letter.docx");
+            MessageBox.Show(templatePath);
+
+            if (!File.Exists(templatePath))
+            {
+                MessageBox.Show("Шаблон не найден!");
+                return;
+            }
+
+            var wordApp = new Microsoft.Office.Interop.Word.Application();
+            wordApp.Visible = false;
+
+            Document doc = wordApp.Documents.Open(templatePath);
+            doc.Activate();
+
+            ReplacePlaceholder(doc, "<Письмо>", BidLetter.Text);
+
+            string tempFilePath = Path.GetTempFileName() + ".docx";
+            doc.SaveAs2(tempFilePath);
+
+            doc.PrintOut();
+
+            doc.Close();
+            wordApp.Quit();
+
+            File.Delete(tempFilePath);
+        }
+
+        private void AddPayment_Click(object sender, RoutedEventArgs e)
+        {
+            using ApplicationContext context = new ApplicationContext();
+            context.Payments.Add(new Models.Payments
+            {
+                File = _filePath,
+            });
+            context.SaveChanges();
+            int Id = context.Payments.Max(b => b.IdPay);
+            AddPaymentsList.Items.Add(context.Payments.Where(b => b.IdPay == Id).FirstOrDefault());
+            AddPaymentsList.Items.Refresh();
+        }
+
+        private void AddNotification_Click(object sender, RoutedEventArgs e)
+        {
+            using ApplicationContext context = new ApplicationContext();
+            context.Notification.Add(new Models.Notification
+            {
+                Name = NotificationName.Text,
+                Addressee = NotificationAddressee.Text,
+                Message = NotificationMessage.Text
+            });
+            context.SaveChanges();
+            NotificationName.Clear();
+            NotificationAddressee.Clear();
+            NotificationMessage.Clear();
+            int Id = context.Notification.Max(b => b.IdNotification);
+            AddNotificationsList.Items.Add(context.Notification.Where(b => b.IdNotification == Id).FirstOrDefault());
+            AddNotificationsList.Items.Refresh();
+        }
+
+        private void ClosePayment_Click(object sender, RoutedEventArgs e)
+        {
+            AddPaymentsList.Visibility = Visibility.Collapsed;
+            FilePay.Visibility = Visibility.Collapsed;
+            Payment.Visibility = Visibility.Collapsed;
+            AddPayment.Visibility = Visibility.Collapsed;
+            ClosePayment.Visibility = Visibility.Collapsed;
+        }
+
+        private void AddPayments_Click(object sender, RoutedEventArgs e)
+        {
+            AddPaymentsList.Visibility = Visibility.Visible;
+            FilePay.Visibility = Visibility.Visible;
+            Payment.Visibility = Visibility.Visible;
+            AddPayment.Visibility = Visibility.Visible;
+            ClosePayment.Visibility = Visibility.Visible;
+        }
+
+        private void Payment_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Выберите файл";
+            openFileDialog.Filter = "Все файлы (*.*)|*.*";
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                _filePath = openFileDialog.FileName;
+                MessageBox.Show("Выбран файл: " + _filePath);
+            }
+
+        }
+
+        private void CloseNotification_Click(object sender, RoutedEventArgs e)
+        {
+            AddNotificationsList.Visibility = Visibility.Collapsed;
+            TextNotificationName.Visibility = Visibility.Collapsed;
+            NotificationName.Visibility = Visibility.Collapsed;
+            TextNotificationAddressee.Visibility = Visibility.Collapsed;
+            NotificationAddressee.Visibility = Visibility.Collapsed;
+            TextNotificationMessage.Visibility = Visibility.Collapsed;
+            NotificationMessage.Visibility = Visibility.Collapsed;
+            AddNotification.Visibility = Visibility.Collapsed;
+            CloseNotification.Visibility = Visibility.Collapsed;
+        }
+
+        private void AddNotifications_Click(object sender, RoutedEventArgs e)
+        {
+            AddNotificationsList.Visibility = Visibility.Visible;
+            TextNotificationName.Visibility = Visibility.Visible;
+            NotificationName.Visibility = Visibility.Visible;
+            TextNotificationAddressee.Visibility = Visibility.Visible;
+            NotificationAddressee.Visibility = Visibility.Visible;
+            TextNotificationMessage.Visibility = Visibility.Visible;
+            NotificationMessage.Visibility = Visibility.Visible;
+            AddNotification.Visibility = Visibility.Visible;
+            CloseNotification.Visibility = Visibility.Visible;
         }
     }
 }
